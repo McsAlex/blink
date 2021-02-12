@@ -7,8 +7,17 @@
 
 
 #include <xc.h>
-
+#include "config.h"
 void main(void) 
 {
-    return;
+    while(1)
+    {
+    TRISDbits.TRISD7=0;
+    
+    PORTDbits.RD7=0;
+    __delay_ms(500);
+    PORTDbits.RD7=1;
+    __delay_ms(500);
+    PORTDbits.RD7=0;        
+    }
 }
